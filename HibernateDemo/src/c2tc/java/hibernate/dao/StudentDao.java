@@ -1,5 +1,6 @@
 package c2tc.java.hibernate.dao;
 
+import c2tc.java.hibernate.entity.Laptop;
 import c2tc.java.hibernate.entity.Student;
 
 public interface StudentDao {
@@ -15,5 +16,7 @@ public interface StudentDao {
 	Student getStudent(int uid);
 
 	void deleteStudent(int i);
+
+	void addLaptop(Laptop l);
 
 }

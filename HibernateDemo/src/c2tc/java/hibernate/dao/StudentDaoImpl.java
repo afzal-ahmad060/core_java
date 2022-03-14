@@ -2,6 +2,7 @@ package c2tc.java.hibernate.dao;
 
 import javax.persistence.EntityManager;
 
+import c2tc.java.hibernate.entity.Laptop;
 import c2tc.java.hibernate.entity.Student;
 
 public class StudentDaoImpl implements StudentDao{
@@ -44,6 +45,12 @@ public class StudentDaoImpl implements StudentDao{
 	public void deleteStudent(int uid) {
 		Student s = entityManager.find(Student.class,uid);
 		entityManager.remove(s);
+		
+	}
+
+	@Override
+	public void addLaptop(Laptop l) {
+		entityManager.persist(l);
 		
 	}
 	

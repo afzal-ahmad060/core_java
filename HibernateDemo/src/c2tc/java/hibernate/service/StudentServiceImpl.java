@@ -2,6 +2,7 @@ package c2tc.java.hibernate.service;
 
 import c2tc.java.hibernate.dao.StudentDao;
 import c2tc.java.hibernate.dao.StudentDaoImpl;
+import c2tc.java.hibernate.entity.Laptop;
 import c2tc.java.hibernate.entity.Student;
 
 public class StudentServiceImpl implements StudentService{
@@ -36,6 +37,14 @@ public class StudentServiceImpl implements StudentService{
 	public void deleteStudent(int i) {
 		sd.startTransaction();
 		sd.deleteStudent(i);
+		sd.endTransaction();
+		
+	}
+
+	@Override
+	public void addLaptop(Laptop l) {
+		sd.startTransaction();
+		sd.addLaptop(l);
 		sd.endTransaction();
 		
 	}

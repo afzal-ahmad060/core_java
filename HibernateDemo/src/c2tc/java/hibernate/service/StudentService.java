@@ -1,5 +1,6 @@
 package c2tc.java.hibernate.service;
 
+import c2tc.java.hibernate.entity.Laptop;
 import c2tc.java.hibernate.entity.Student;
 
 public interface StudentService {
@@ -11,5 +12,7 @@ public interface StudentService {
 	Student getStudent(int uid);
 
 	void deleteStudent(int i);
+
+	void addLaptop(Laptop l);
 
 }

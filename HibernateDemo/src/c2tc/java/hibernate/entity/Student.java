@@ -9,14 +9,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ManyToAny;
+
 @Entity
-@Table(name = "student")
+//@Table(name = "student")
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Inheritance(strategy = InheritanceType.JOINED)
-
+//@Inheritance(strategy = InheritanceType.JOINED)
 //@DiscriminatorColumn(name = "student", discriminatorType = DiscriminatorType.STRING)
 
 public class Student implements Serializable{
@@ -26,6 +29,8 @@ public class Student implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
+	@OneToOne
+	private Laptop laptop;
 	
 	public int getUid() {
 		return uid;
@@ -39,6 +44,14 @@ public class Student implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
+	public Laptop getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Student [uid=" + uid + ", name=" + name + "]";
