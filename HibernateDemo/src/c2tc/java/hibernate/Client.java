@@ -11,16 +11,22 @@ public class Client {
 	public static void main(String[] args) {
 		StudentService service = new StudentServiceImpl();
 		Student s = new Student();
-		Laptop l = new Laptop();
-		s.setUid(601);
-		s.setName("Afzal");
+		Laptop l1 = new Laptop();
+		Laptop l2 = new Laptop();
+		s.setUid(100);
+		s.setName("Afzal Ahmad");
 		
-		l.setLid(1);
-		l.setLname("HP");
+		l1.setLid(2);
+		l1.setLname("HP");
 		
-		s.setLaptop(l);
+		l2.setLid(3);
+		l2.setLname("Lenovo");
 		
-		service.addLaptop(l);
+		s.getLaptop().add(l1);
+		s.getLaptop().add(l2);
+		
+		service.addLaptop(l1);
+		service.addLaptop(l2);
 		service.addStudent(s);
 		
 		//C2TC_batch student = new C2TC_batch();

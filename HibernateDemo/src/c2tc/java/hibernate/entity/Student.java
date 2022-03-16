@@ -13,7 +13,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.annotations.ManyToAny;
+
 
 @Entity
 //@Table(name = "student")
@@ -29,8 +33,9 @@ public class Student implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
-	@OneToOne
-	private Laptop laptop;
+	//@OneToOne
+	@ManyToMany
+	private List<Laptop> laptop = new ArrayList<>();
 	
 	public int getUid() {
 		return uid;
@@ -44,14 +49,12 @@ public class Student implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Student [uid=" + uid + ", name=" + name + "]";

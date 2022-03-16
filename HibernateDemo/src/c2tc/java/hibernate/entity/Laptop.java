@@ -1,8 +1,13 @@
 package c2tc.java.hibernate.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Laptop {
@@ -11,8 +16,9 @@ public class Laptop {
 	private int lid;
 	private String lname;
 	
-	@OneToOne(mappedBy = "laptop")
-	Student student;
+	//@OneToOne(mappedBy = "laptop")
+	@ManyToMany
+	private List<Student> student;
 	
 	public int getLid() {
 		return lid;
@@ -26,10 +32,10 @@ public class Laptop {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-	public Student getStudent() {
+	public List<Student> getStudent() {
 		return student;
 	}
-	public void setStudent(Student student) {
+	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
 	
