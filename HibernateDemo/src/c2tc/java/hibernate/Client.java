@@ -13,13 +13,13 @@ public class Client {
 		Student s = new Student();
 		Laptop l1 = new Laptop();
 		Laptop l2 = new Laptop();
-		s.setUid(100);
-		s.setName("Afzal Ahmad");
+		s.setUid(101);
+		s.setName("Salman Ahmad");
 		
-		l1.setLid(2);
+		l1.setLid(4);
 		l1.setLname("HP");
 		
-		l2.setLid(3);
+		l2.setLid(5);
 		l2.setLname("Lenovo");
 		
 		s.getLaptop().add(l1);

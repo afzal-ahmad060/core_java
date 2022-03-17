@@ -17,7 +17,7 @@ public class Laptop {
 	private String lname;
 	
 	//@OneToOne(mappedBy = "laptop")
-	@ManyToMany
+	@ManyToMany(mappedBy = "laptop")
 	private List<Student> student;
 	
 	public int getLid() {
