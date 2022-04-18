@@ -51,7 +51,7 @@ public class StudentDaoImpl implements StudentDao {
 
 	@Override
 	public List<Student> getStudentbyTrainerName(Date date1, Date date2) {
-		String query = "Select s from Student s where s.dob between :date1 and :date2";
+		String query = "Select s from Student s where s.dob between : date1 and : date2";
 		TypedQuery<Student> t =em.createQuery(query,Student.class);
 		t.setParameter("date1",date1);
 		t.setParameter("date2",date2);

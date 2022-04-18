@@ -16,7 +16,7 @@ public class Client {
 		Student student = new Student();
 		StudentService service = new StudentServiceImpl();
 		
-		String dateStr1 = "01/01/1890";
+		String dateStr1 = "01/01/1880";
 		String dateStr2 = "01/01/2020";
 		SimpleDateFormat format =new SimpleDateFormat("dd/MM/yyyy");
 		Date date1 = format.parse(dateStr1);
